@@ -6,7 +6,7 @@ import jakarta.persistence.*;
 @Table(name="todos")
 public class Todo {
     @Id
-    @GeneratedValue
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
     private String titulo;
