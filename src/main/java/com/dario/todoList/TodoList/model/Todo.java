@@ -1,8 +1,9 @@
 package com.dario.todoList.TodoList.model;
 
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.Id;
+import jakarta.persistence.*;
 
+@Entity
+@Table(name="todos")
 public class Todo {
     @Id
     @GeneratedValue
