@@ -2,9 +2,11 @@ package com.dario.todoList.TodoList.service;
 
 import com.dario.todoList.TodoList.model.Todo;
 import com.dario.todoList.TodoList.repository.TodoRepository;
+import org.springframework.stereotype.Service;
 
 import java.util.List;
 
+@Service
 public class TodoService {
 
     private TodoRepository todoRepository;
