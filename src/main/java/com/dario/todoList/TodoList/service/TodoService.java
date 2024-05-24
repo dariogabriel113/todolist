@@ -2,6 +2,7 @@ package com.dario.todoList.TodoList.service;
 
 import com.dario.todoList.TodoList.model.Todo;
 import com.dario.todoList.TodoList.repository.TodoRepository;
+import org.springframework.data.domain.Sort;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
@@ -16,7 +17,8 @@ public class TodoService {
     }
 
     public List<Todo> listar() {
-        return todoRepository.findAll();
+        Sort sort = Sort.by(Sort.Direction.ASC, "isFinalizado");
+        return todoRepository.findAll(sort);
     }
 
     public List<Todo> criar(Todo todo) {
