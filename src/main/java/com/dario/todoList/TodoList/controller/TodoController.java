@@ -2,6 +2,7 @@ package com.dario.todoList.TodoList.controller;
 
 import com.dario.todoList.TodoList.model.Todo;
 import com.dario.todoList.TodoList.service.TodoService;
+import jakarta.validation.Valid;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
@@ -23,12 +24,12 @@ public class TodoController {
     }
 
     @PostMapping
-    List<Todo> criar(@RequestBody Todo todo) {
+    List<Todo> criar(@RequestBody @Valid Todo todo) {
         return todoService.criar(todo);
     }
 
     @PutMapping
-    List<Todo> editar(@RequestBody Todo todo) {
+    List<Todo> editar(@RequestBody @Valid Todo todo) {
         return todoService.editar(todo);
     }
 
